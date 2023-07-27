@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script is displaying "luck" 10 times
+y=0
+while [ $((++y)) -le 10 ]; do
+	if [ $y == 4 ]; then
+		echo "bad luck"
+	elif [ $y == 8 ]; then
+		echo "good luck"
+	else
+		echo "Best School"
+fi
+done
