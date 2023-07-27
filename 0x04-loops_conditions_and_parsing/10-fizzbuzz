@@ -9,6 +9,6 @@ while [ $((x++)) -lt 100 ]; do
 	elif [ $((x % 3)) -eq 0 ]; then
 		echo "Fizz"
 	else
-		echo $i
+		echo $x
 	fi
 done
