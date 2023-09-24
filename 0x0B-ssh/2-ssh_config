@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# A script to connect to server without password
+Host 54.210.195.72
+IdentityFile ~/.ssh/school
+passwordAuthentication no
