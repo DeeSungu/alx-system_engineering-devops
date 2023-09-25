@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# script that installs Nginx server and redirects /redirect_me to
+# script that installs Nginx server and redirects
 # another page
 # The redirection must be a “301 Moved Permanently”
 apt-get -y update
