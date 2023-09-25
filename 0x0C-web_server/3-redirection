@@ -1,17 +1,10 @@
 #!/usr/bin/env bash
-# Make to /redirect_me is redirecting to another page.
-
-apt-get update
-apt-get install -y nginx
-
-# Create default page
-echo "Holberton School" > /var/www/html/index.html
-
-# server configuration
-ufw allow 'Nginx HTTP'
-
-# redirection added
-new_site="https://github.com/DeeSungu/"
-sed -i "/listen 80 default_server/a rewrite ^/redirect_me $new_site permanent;" /etc/nginx/sites-available/default
-
+# script that installs Nginx server and redirects /redirect_me to
+# another page
+# The redirection must be a “301 Moved Permanently”
+apt-get -y update
+apt-get -y install nginx
+service nginx start
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+sed -i "/server_name _;/ a\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default
 service nginx restart
