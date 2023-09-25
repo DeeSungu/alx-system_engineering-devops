@@ -5,12 +5,12 @@ apt-get update
 apt-get install -y nginx
 
 # Create default page
-echo "Hello World" > /var/www/html/index.html
+echo "Holberton School" > /var/www/html/index.html
 
-# Configurate server
+# server configuration
 ufw allow 'Nginx HTTP'
 
-# Add redirection
+# redirection added
 new_site="https://github.com/DeeSungu/"
 sed -i "/listen 80 default_server/a rewrite ^/redirect_me $new_site permanent;" /etc/nginx/sites-available/default
 
