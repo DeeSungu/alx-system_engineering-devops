@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-#A script with commands that automatically configure a ubuntu
-#machine to configure a Nginx server so that its redirected to a
-#another page
+# Bash script containing commands to automatically configure a Ubuntu machine to
+# configure a Nginx server so that /redirect_me is redirecting to another page
 sudo apt-get -y update
 sudo apt-get -y install nginx
-sudo sh -c 'echo "Hello World!" > /var/www/html/index.nginx-debian.html'
-sudo sed -i '/^}$/i \ \n\tlocation \/redirect_me {return 301 https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4;}' /etc/nginx/sites-available/default
+sudo ufw allow 'Nginx HTTP'
+sudo echo "Hello World" | sudo tee /var/www/html/index.nginx-debian.html
+sudo sed -i "/listen \[\:\:\]\:80 default_server;/a rewrite ^/redirect_me https://www.youtube.com permanent;" /etc/nginx/sites-available/default
 sudo service nginx start
