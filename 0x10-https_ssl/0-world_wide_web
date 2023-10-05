@@ -9,9 +9,9 @@ domain_info () {
 if [ "$#" == 1 ]
 then
     domain_info "$1" "www"
-    domain_info "$1" "54.236.16.83"
-    domain_info "$1" "54.210.195.72"
-    domain_info "$1" "54.242.181.250"
+    domain_info "$1" "lb-01"
+    domain_info "$1" "web-01"
+    domain_info "$1" "web-02"
 elif [ "$#" == 2 ]
 then
     domain_info "$1" "$2"
